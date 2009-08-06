@@ -1,8 +1,9 @@
 // ==UserScript==
-// @name           mysqlgame-l4m3r
+// @name           mysqlgame
 // @namespace      http://github.com/biba/mysqlgame
 // @description    mysqlgame bot
 // @include        http://mysqlgame.com/dashboard
+// @require        http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js
 // ==/UserScript==
 
 attackhelper=1;
@@ -129,7 +130,7 @@ function watchQueries(e){
 
 function createButtons(){
 
-    var logcontainer=document.getElementsByClassName('panel_header')[2];
+    var logcontainer=$('.panel_header').get(2);
     statusbox=document.createElement('div');
     statusbox.id='statusbox';
     logcontainer.insertBefore(statusbox,logcontainer.firstChild);
