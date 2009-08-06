@@ -1,10 +1,9 @@
 // ==UserScript==
-// @name           mysqlgame
-// @namespace      adslfkjasdhfalsdkjfhwaiufhaw.net
+// @name           mysqlgame-l4m3r
+// @namespace      http://github.com/biba/mysqlgame
 // @description    mysqlgame bot
-// @include        http://mysqlgame.appspot.com/dashboard
+// @include        http://mysqlgame.com/dashboard
 // ==/UserScript==
-// version 20081116
 
 attackhelper=1;
 defensehelper=1;
