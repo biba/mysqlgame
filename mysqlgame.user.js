@@ -515,7 +515,7 @@ function buydefenders(order){
     status(" Buying " + order.amount+" defenders at row "+order.id);
     var defendersbox=document.getElementsByName("defenders")[0];
     defendersbox.value=order.amount;
-    if (order.amount > defendersamount){
+    if (order.amount > defenderAmount){
         status("Afraid to buy "+amount+" defenders, do manually");
         return;
     }
