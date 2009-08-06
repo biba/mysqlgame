@@ -132,10 +132,8 @@ function createButtons(){
 
     var logcontainer=$('.panel_header').get(2);
     $(logcontainer).before($(document.createElement('div')).attr('id', 'statusbox'));
-    honeybox=document.createElement('div');
-    honeybox.id='honeybox';
     var attackcontainer=$('.panel_header').get(1);
-    $(attackcontainer).before($(document.createElement('div')).attr('id', 'statusbox'));
+    $(attackcontainer).before($(document.createElement('div')).attr('id', 'honeybox'));
 
     defensebutton=document.createElement('a');
     defensebutton.innerHTML="reset";
@@ -598,17 +596,17 @@ function queueHoney(row,attackForce){
 function displayHoney(){
     var honeystring="";
     if (honeyQueue.length>0)
-        honeybox.innerHTML="Check: ";
+        $('honeybox').innerHTML="Check: ";
     else
-        honeybox.innerHTML="";
+        $('honeybox').innerHTML="";
     for (var i=0;i<honeyQueue.length;i++){
         var a=document.createElement('a');
         a.innerHTML=honeyQueue[i].row_id;a.href='javascript:void(0)';
         a.addEventListener('click',function(e){
             scan(this.text);
         },true);
-        honeybox.appendChild(a);
-        honeybox.appendChild(document.createTextNode(" "));
+        $('honeybox').appendChild(a);
+        $('honeybox').appendChild(document.createTextNode(" "));
     }
 }
 
@@ -622,7 +620,7 @@ function switchRow(id){
 }
 
 function status(s){
-    statusbox.innerHTML=s;
+    $('statusbox').innerHTML=s;
 }
 
 function log(a, b, c){
