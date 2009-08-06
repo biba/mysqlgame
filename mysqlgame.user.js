@@ -131,16 +131,14 @@ function watchQueries(e){
 function createButtons(){
 
     var logcontainer=$('.panel_header').get(2);
-    statusbox=document.createElement('div');
-    statusbox.id='statusbox';
-    logcontainer.insertBefore(statusbox,logcontainer.firstChild);
+    $(logcontainer).before($(document.createElement('div')).attr('id', 'statusbox'));
     honeybox=document.createElement('div');
     honeybox.id='honeybox';
-    var attackcontainer=document.getElementsByClassName('panel_header')[1];
-    tag='in';
-    attackcontainer.appendChild(honeybox);
+    var attackcontainer=$('.panel_header').get(1);
+    $(attackcontainer).before($(document.createElement('div')).attr('id', 'statusbox'));
 
-    defensebutton=document.createElement('a');defensebutton.innerHTML="reset";
+    defensebutton=document.createElement('a');
+    defensebutton.innerHTML="reset";
     defensebutton.href="javascript:void(0);";
     defensebutton.addEventListener('click',function(){
         //defensehelper=!defensehelper;
@@ -148,25 +146,29 @@ function createButtons(){
         fuelGain = 0;
     },true);
 
-    attackbutton=document.createElement('a');attackbutton.innerHTML="offense";
+    attackbutton=document.createElement('a');
+    attackbutton.innerHTML="offense";
     attackbutton.href="javascript:void(0);";
     attackbutton.addEventListener('click',function(){
         attackhelper=!attackhelper;
     },true);
 
-    huntbutton=document.createElement('a');huntbutton.innerHTML="attack (off)";
+    huntbutton=document.createElement('a');
+    huntbutton.innerHTML="attack (off)";
     huntbutton.href="javascript:void(0);";
     huntbutton.addEventListener('click',toggleHunt,true);
 
-    scanbutton=document.createElement('a');scanbutton.innerHTML="scan (off)";
+    scanbutton=document.createElement('a');
+    scanbutton.innerHTML="scan (off)";
     scanbutton.href="javascript:void(0);";
     scanbutton.addEventListener('click',toggleScan,true);
 
-    managebutton=document.createElement('a');managebutton.innerHTML="manage (on)";
+    managebutton=document.createElement('a');
+    managebutton.innerHTML="manage (on)";
     managebutton.href="javascript:void(0);";
     managebutton.addEventListener('click',toggleManage,true);
 
-    divcontainer = document.getElementsByClassName('panel_header')[0]; // refresh-link
+    divcontainer = $('.panel_header').get(0);
     foo = document.createElement('adsf');
     bar = document.createElement('fdsa');
 
